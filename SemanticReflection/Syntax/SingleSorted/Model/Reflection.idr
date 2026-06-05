@@ -71,7 +71,7 @@ openAx thyNm ax = do
         vars <- unerase ax.vars
 
         pure $ foldl
-            (\rest, nm => IApp fc rest $ IBindVar fc nm)
+            (\rest, nm => IApp fc rest $ IBindVar fc (UN (Basic nm)))
             (IVar fc name)
             vars
 
